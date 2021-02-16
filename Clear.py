@@ -13,7 +13,7 @@
 
 # print(fib(10.5))
 
-
+import sys
 c=[23,23,1,3,2,3,4]
 print(c)
 print(c[0:4:1])
@@ -25,13 +25,26 @@ class Slovar:
         self.d=dict()
         self.d[self.key]=self.value
    
-    def add(self):
-        pass
+    def add(self,re1,re2):
+        self.re1=re1
+        self.re2=re2
+        self.d.update({self.re1:self.re2})
+        print(self.d)
 
-a=Slovar('Денис',795843849)        
+    def clear(self):
+        r=input('Введите кого хотите удалить') 
+        if r in self.d:
+            del self.d[r]   
+            print(self.d)
+        else:
+            print('Такого нет')    
+
+a=Slovar('Денис', 795843849)   
+print(str(sys.getsizeof(a)) + ' bit')    
 print(a.d)
-
-
+a.add('Vadim' , 49594939)
+print(str(sys.getsizeof(c)) + ' bit')    
+a.clear()
 
 
 
